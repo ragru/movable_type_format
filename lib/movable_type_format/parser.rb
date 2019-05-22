@@ -89,6 +89,8 @@ module MovableTypeFormat
           section.body << line
           context = :body
         end
+
+        return section if lines.next? && lines.peek == "--------\n"
       end
       raise "Section delimiter not found!"
     end
